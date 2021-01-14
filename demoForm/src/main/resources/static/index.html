@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<head>
+    <title>CalcFormWithVue</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+    <div id="app">
+        <h1>Form</h1>
+        <p>Enter first number: <input type="text" v-model="num1" v-on:change="addTwoNums"/></p>
+        <p>Enter second number: <input type="text" v-model="num2" v-on:change="addTwoNums"/></p>
+        <p>Your result: {{ result }}</p>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            num1: 1,
+            num2: 2,
+            result: 0
+        },
+        methods: {
+            addTwoNums() {
+                var url="/greeting?num1=" + this.num1 + "&num2=" + this.num2;
+                axios
+                    .get(url)
+                    .then(response => {
+                        this.result = response.data;
+                    });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
