@@ -3,6 +3,7 @@ package com.example.demo.api.rest;
 import com.example.demo.core.models.Greeting;
 import com.example.demo.core.services.CalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

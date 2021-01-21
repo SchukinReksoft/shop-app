@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<head>
+    <title>CatalogForm</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div class="container" id="app">
+    <h1>Catalog</h1>
+    <button>New product v-on:change="addProduct"</button>
+    <button>Edit product v-on:change="editProduct"</button>
+    <button>Delete product v-on:change="deleteProduct"</button>
+    <p>Product name : v-model="productName" </p>
+    <p>Product description : v-model="productDescription" </p>
+    <p>Product price : v-model="productPrice" </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            productName: 1,
+            productDescription: 2,
+            productPrice: 3
+        },
+        methods: {
+            addProduct() { axios
+                    .get(url)
+                    .then(response => {
+                        this.result = response.data;
+                    }); }
+
+            editProduct()
+            deleteProduct()
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

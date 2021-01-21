@@ -1,7 +1,9 @@
 package com.example.demo.core.models;
 
-public class Greeting {
+import java.util.UUID;
 
+public class Greeting {
+    private UUID id = UUID.randomUUID();
     private int num1;
     private int num2;
     private int result;
